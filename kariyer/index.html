@@ -1,12 +1,230 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>Career Management</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Yetenek Eşleştirme Platformu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            overflow-x: hidden;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#1a1f26 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
 </head>
-<body>
-    <h1>Career Management</h1>
-    <p>Bu sayfa yapım aşamasındadır.</p>
-    
-    <p><a href="../">Ana Sayfaya Dön</a></p>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- Header Section -->
+    <header class="bg-gray-800 bg-opacity-70 backdrop-blur-sm sticky top-0 z-50 shadow-lg rounded-b-3xl">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-400">Yetenek Platformu</a>
+            <div class="space-x-4">
+                <a href="#nasil-calisir" class="text-white hover:text-blue-400 transition-colors">Nasıl Çalışır?</a>
+                <a href="#neden-biz" class="text-white hover:text-blue-400 transition-colors">Neden Biz?</a>
+                <a href="#hizmetler" class="text-white hover:text-blue-400 transition-colors">Hizmetler</a>
+                <a href="#iletisim" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors shadow-md">İletişime Geç</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="bg-pattern">
+        <!-- Hero Section -->
+        <section class="flex flex-col md:flex-row items-center justify-center min-h-screen px-6 py-20 text-center md:text-left container mx-auto">
+            <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                    İşe Alımı Yeniden Tanımlıyoruz
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-6">
+                    Geleneksel "ilan ver ve bekle" modelini unutun. Yapay zeka ve proaktif bir yaklaşımla,
+                    IT sektöründeki en iyi yetenekleri sizin için buluyoruz.
+                </p>
+                <div class="space-x-4">
+                    <a href="#hizmetler" class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-xl">Hizmetleri Keşfet</a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <!-- A simple SVG graphic to represent the concept -->
+                <svg viewBox="0 0 100 100" class="w-full h-auto text-blue-500 animate-fade-in-right">
+                    <path d="M50,10 A40,40 0 1,1 50,90 A40,40 0 1,1 50,10 Z" fill="none" stroke="currentColor" stroke-width="2" />
+                    <circle cx="50" cy="50" r="2" fill="currentColor" />
+                    <path d="M50,50 L75,25" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M50,50 L25,25" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M50,50 L75,75" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M50,50 L25,75" stroke="currentColor" stroke-width="1.5" />
+                    <text x="65" y="20" font-size="5" fill="currentColor" text-anchor="middle">Şirket</text>
+                    <text x="35" y="20" font-size="5" fill="currentColor" text-anchor="middle">Yapay Zeka</text>
+                    <text x="65" y="80" font-size="5" fill="currentColor" text-anchor="middle">Aday</text>
+                    <text x="35" y="80" font-size="5" fill="currentColor" text-anchor="middle">Aday Havuzu</text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Nasıl Çalışır Section -->
+        <section id="nasil-calisir" class="py-20 bg-gray-900 text-center container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-white mb-12">Nasıl Çalışır?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-t-4 border-blue-500">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gray-700 rounded-full flex items-center justify-center text-blue-400 text-2xl font-bold">1</div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Proaktif Keşif</h3>
+                    <p class="text-gray-400">Pasif ilan beklemek yok. Aktif olarak IT sektöründeki en iyi yetenekleri arıyor ve veri havuzumuzu sürekli güçlendiriyoruz.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-t-4 border-blue-500">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gray-700 rounded-full flex items-center justify-center text-blue-400 text-2xl font-bold">2</div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Akıllı Değerlendirme</h3>
+                    <p class="text-gray-400">Yapay zekâ destekli sistemimizle adayların hem teknik hem de kişisel becerilerini objektif bir şekilde değerlendiriyoruz.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-t-4 border-blue-500">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gray-700 rounded-full flex items-center justify-center text-blue-400 text-2xl font-bold">3</div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Kapalı CV Sunumu</h3>
+                    <p class="text-gray-400">Sadece en iyi 5 adayı, gizliliği korunan kapalı CV'leri ile size sunuyoruz. Sadece ilgilendiğiniz adaylarla görüşürsünüz.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-t-4 border-blue-500">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gray-700 rounded-full flex items-center justify-center text-blue-400 text-2xl font-bold">4</div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Başarı Odaklı Ödeme</h3>
+                    <p class="text-gray-400">Başarılı bir yerleştirme gerçekleştiğinde, ödeme yaparsınız. Niteliksiz adaylarla zaman kaybetmekten kurtulursunuz.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Neden Biz Section -->
+        <section id="neden-biz" class="py-20 bg-gray-800 container mx-auto rounded-3xl px-6">
+            <h2 class="text-4xl font-bold text-white text-center mb-12">Neden Farklıyız?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Sol Kolon: Adaylar İçin -->
+                <div class="bg-gray-900 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Adaylar İçin</h3>
+                    <ul class="list-disc list-inside space-y-4 text-gray-300">
+                        <li>
+                            <span class="font-semibold text-white">Zahmetsiz Kariyer İlerlemesi:</span> Sizin için en doğru fırsatları biz bulurken, siz kariyerinize odaklanmaya devam edin. İş arama süreciyle vakit kaybetmeyin.
+                        </li>
+                        <li>
+                            <span class="font-semibold text-white">Yüksek Kazanç Fırsatları:</span> Mevcut pozisyonunuzu riske atmadan, aklınızda bile yokken daha yüksek kazançlı ve tatmin edici kariyer fırsatlarıyla tanışın.
+                        </li>
+                        <li>
+                            <span class="font-semibold text-white">Hedefinize Yönelik Geçiş:</span> Kariyer hedeflerinize ve geçiş yapmak istediğiniz sektöre özel olarak tasarlanmış pozisyonlarla eşleşin.
+                        </li>
+                        <li>
+                            <span class="font-semibold text-white">Tercih İmkanı:</span> Sadece sizin de ilgilendiğiniz ve onay verdiğiniz şirketlerle görüşme imkanı elde ederek, süreci tamamen kontrol edin.
+                        </li>
+                    </ul>
+                </div>
+                <!-- Sağ Kolon: Firmalar İçin -->
+                <div class="bg-gray-900 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Firmalar İçin</h3>
+                    <ul class="list-disc list-inside space-y-4 text-gray-300">
+                        <li>
+                            <span class="font-semibold text-white">Maliyet ve Zaman Tasarrufu:</span> Yüzlerce niteliksiz CV ve onlarca mülakat ile vakit kaybetmek yerine, doğrudan pozisyona en uygun adaylarla görüşme imkanı bulun.
+                        </li>
+                        <li>
+                            <span class="font-semibold text-white">Doğrudan Erişilebilirlik:</span> Hard skill ve soft skill olarak istediğiniz düzeyde, önceden değerlendirilmiş ve kalitesi onaylanmış adaylarla doğrudan görüşün.
+                        </li>
+                        <li>
+                            <span class="font-semibold text-white">Veriye Dayalı Seçim:</span> Adaylarımızın yapay zeka destekli değerlendirme süreçlerinden geçmesi sayesinde, objektif verilere dayanarak en doğru kararı verin.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hizmetler Section -->
+        <section id="hizmetler" class="py-20 bg-gray-900 text-center container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-white mb-12">Sunduğumuz Hizmetler</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-b-4 border-blue-500">
+                    <h3 class="text-2xl font-semibold text-white mb-4">Adaylar için</h3>
+                    <ul class="text-left list-disc list-inside space-y-2 text-gray-400">
+                        <li><span class="text-white">Gizli Pozisyon Fırsatları:</span> Mevcut işinizden ödün vermeden yeni fırsatları değerlendirin.</li>
+                        <li><span class="text-white">Akıllı Eşleşme:</span> Kariyer hedeflerinize ve becerilerinize en uygun pozisyonlarla eşleşin.</li>
+                        <li><span class="text-white">Profesyonel Geribildirim:</span> Değerlendirme süreçlerimizle kendinizi geliştirin.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-b-4 border-blue-500">
+                    <h3 class="text-2xl font-semibold text-white mb-4">Firmalar için</h3>
+                    <ul class="text-left list-disc list-inside space-y-2 text-gray-400">
+                        <li><span class="text-white">En İyi Yetenek Havuzu:</span> Kendi alanında kanıtlanmış en iyi adaylara ulaşın.</li>
+                        <li><span class="text-white">Verimli Süreç Yönetimi:</span> Yüzlerce CV elemek yerine, sadece nitelikli adaylarla mülakat yapın.</li>
+                        <li><span class="text-white">Başarı Odaklı Model:</span> Sadece yerleştirme gerçekleştiğinde ödeme yaparak bütçenizi koruyun.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-b-4 border-blue-500">
+                    <h3 class="text-2xl font-semibold text-white mb-4">Çözümlerimiz</h3>
+                    <ul class="text-left list-disc list-inside space-y-2 text-gray-400">
+                        <li><span class="text-white">AI-Powered Matching:</span> Yapay zeka ile %85'in üzerinde eşleşme doğruluğu.</li>
+                        <li><span class="text-white">Online Mülakat Platformu:</span> Entegre video görüşme ve teknik değerlendirme araçları.</li>
+                        <li><span class="text-white">Gizlilik Yönetimi:</span> Aday ve firma verilerini koruyan kapalı CV sistemi.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- İletişim Form Section -->
+        <section id="iletisim" class="py-20 bg-gray-900 container mx-auto px-6">
+            <div class="bg-gray-800 p-12 rounded-3xl shadow-2xl max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold text-white text-center mb-6">İletişime Geçin</h2>
+                <p class="text-lg text-gray-400 text-center mb-8">
+                    IT yeteneklerinizi güçlendirmek için bir adım atın.
+                </p>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-300 font-semibold mb-2">Adınız Soyadınız</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 font-semibold mb-2">E-posta Adresiniz</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 font-semibold mb-2">Mesajınız</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-full font-bold text-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-xl">Gönder</button>
+                    <div id="status-message" class="text-center mt-4 hidden"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8 text-center text-gray-500">
+        <p>&copy; 2025 Yetenek Platformu. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const statusMessage = document.getElementById('status-message');
+            
+            // Basic form validation
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const message = form.message.value.trim();
+
+            if (!name || !email || !message) {
+                statusMessage.textContent = 'Lütfen tüm alanları doldurunuz.';
+                statusMessage.className = 'text-red-500 text-center mt-4 block';
+                statusMessage.style.display = 'block';
+                return;
+            }
+
+            statusMessage.textContent = 'Mesajınız gönderiliyor...';
+            statusMessage.className = 'text-blue-400 text-center mt-4 block';
+            statusMessage.style.display = 'block';
+
+            setTimeout(() => {
+                // Simulate successful form submission
+                statusMessage.textContent = 'Mesajınız başarıyla gönderildi! Teşekkür ederiz.';
+                statusMessage.className = 'text-green-500 text-center mt-4 block';
+                form.reset();
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
