@@ -1,12 +1,437 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>QaD Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QaD - 100% Agile-Scrum Focused Project Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="2" fill="white" opacity="0.1"/><circle cx="75" cy="25" r="2" fill="white" opacity="0.1"/><circle cx="25" cy="75" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInUp 1s ease;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: slideInUp 1s ease 0.2s both;
+        }
+        
+        .hero .tagline {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 40px;
+            animation: slideInUp 1s ease 0.4s both;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cta-button {
+            background: #e74c3c;
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+            animation: slideInUp 1s ease 0.6s both;
+        }
+        
+        .cta-button:hover {
+            background: #c0392b;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.4);
+        }
+        
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .section-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .comparison-side {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .comparison-side.others {
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .comparison-side.qad {
+            border-left: 5px solid #27ae60;
+            background: linear-gradient(135deg, #f8fff8 0%, #e8f8e8 100%);
+        }
+        
+        .comparison-side h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .comparison-side ul {
+            list-style: none;
+        }
+        
+        .comparison-side li {
+            margin: 10px 0;
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .others li::before {
+            content: '❌';
+            position: absolute;
+            left: 0;
+        }
+        
+        .qad li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .final-cta {
+            background: #f8f9fa;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .back-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.3rem;
+                padding: 10px 20px;
+            }
+            
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>QaD - Quick and Dirty</h1>
-    <p>Bu sayfa yapım aşamasındadır.</p>
-    
-    <p><a href="../">Ana Sayfaya Dön</a></p>
+    <a href="../" class="back-link">← Back to Home</a>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🎯 QaD - Quick and Dirty</h1>
+            <p class="subtitle">100% Agile-Scrum Focused Project Management</p>
+            <div class="tagline">Only Agile-Scrum, Nothing Else Needed!</div>
+            <a href="#demo" class="cta-button">🚀 Get Started</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>🏆 Why QaD is Different?</h2>
+        <p class="section-intro">
+            Other PM tools give you tools, QaD gives you methodology expertise.
+            100% Agile-Scrum focused with integrated training and enforced discipline.
+        </p>
+
+        <div class="comparison">
+            <div class="comparison-side others">
+                <h3>❌ Other PM Software</h3>
+                <ul>
+                    <li>Generic tools that try to do everything but focus on no methodology</li>
+                    <li>Users can work however they want, bypass rules</li>
+                    <li>Expects users to already know methodology</li>
+                    <li>Assumes you know Agile, no warnings for wrong usage</li>
+                    <li>You can start sprints without sprint planning</li>
+                    <li>You can skip daily standups</li>
+                </ul>
+            </div>
+
+            <div class="comparison-side qad">
+                <h3>✅ QaD Difference</h3>
+                <ul>
+                    <li>100% Agile-Scrum focused specialized platform</li>
+                    <li>Structured workflows that enforce Agile-Scrum compliance</li>
+                    <li>Process guidance and training integrated system</li>
+                    <li>Popup guidance teaches Agile-Scrum principles at every step</li>
+                    <li>Cannot start sprint without Sprint Planning</li>
+                    <li>Daily standups are automatically scheduled and tracked</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>⚡ Superior Features</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Integrated Training System</h3>
+                <p>Scrum Guide and Agile Manifesto references in every operation. No chance for wrong steps - system shows the right way.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3>Structured Workflow</h3>
+                <p>Mandatory Backlog → Epic → User Story → Task hierarchy. Cannot define tasks without team meetings.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Real-time Monitoring</h3>
+                <p>Detailed estimation vs actual comparisons. Team estimation accuracy analysis and automatic lesson learned categorization.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Advanced Budget Management</h3>
+                <p>Automatic hourly resource cost calculation. Task/Sprint/Project level expense breakdown.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Smart Resource Management</h3>
+                <p>Automatic resource conflict prevention. Weekly capacity planning and multi-project resource optimization.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Process Discipline</h3>
+                <p>Strict tracking of sprint start/end dates. Review and retrospective meetings are automatically scheduled.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <h2>🚀 Time for Your Team's Real Agile-Scrum Experience!</h2>
+        <p>
+            Start with QaD to gain methodology expertise, achieve measurable results, and increase team discipline. 
+            Quick and Dirty: Only what works!
+        </p>
+        <a href="#demo" class="cta-button">💎 Try for Free</a>
+    </section>
+
+    <script>
+        // Smooth scroll for CTA buttons
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation to feature cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Initially hide and position elements
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
