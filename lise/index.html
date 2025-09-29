@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azerbaycan IT Eğitim Programı</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(103,126,234,0.1), transparent);
+            animation: rotate 10s infinite linear;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header p {
+            font-size: 1.4rem;
+            color: #555;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Vision Section */
+        .vision {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            padding: 3rem 0;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .vision h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .vision p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Programs Grid */
+        .programs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+        
+        .program-card {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        
+        .program-card h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .program-level {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+        }
+        
+        .program-level h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .program-level p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .project-cert {
+            background: #f8f9ff;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 0.5rem 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .project-cert strong {
+            color: #333;
+        }
+        
+        /* Features Section */
+        .features {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(103,126,234,0.1), rgba(118,75,162,0.1));
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: scale(1.05);
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        .feature p {
+            color: #666;
+        }
+        
+        /* Career Section */
+        .career {
+            background: linear-gradient(135deg, rgba(103,126,234,0.9), rgba(118,75,162,0.9));
+            backdrop-filter: blur(10px);
+            color: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .career h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .career-paths {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .career-path {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .career-path h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .career-path p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Why Section */
+        .why {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .why h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+        
+        .why-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .why-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(103,126,234,0.05), rgba(118,75,162,0.05));
+        }
+        
+        .why-item span {
+            font-size: 2rem;
+            min-width: 3rem;
+        }
+        
+        .why-item div h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .why-item div p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0 2rem 0;
+        }
+        
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-motto {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1.1rem;
+            }
+            
+            .programs {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid,
+            .career-paths,
+            .why-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-motto {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Animations */
+        .program-card,
+        .feature,
+        .why-item {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .program-card:nth-child(2) { animation-delay: 0.1s; }
+        .program-card:nth-child(3) { animation-delay: 0.2s; }
+        .program-card:nth-child(4) { animation-delay: 0.3s; }
+        .program-card:nth-child(5) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <section class="header">
+            <h1>🚀 AZERBAYCAN IT EĞİTİM PROGRAMI</h1>
+            <p><em>2 Yılda Junior IT Uzmanı Ol</em></p>
+        </section>
+        
+        <!-- Vision -->
+        <section class="vision">
+            <h2>🎯 PROGRAM VİZYONU</h2>
+            <p><strong>Azerbaycan'ın geleceğini şekillendiren IT liderleri yetiştiriyoruz!</strong><br>
+            16 yaşında mezun olduğunuzda <strong>Junior seviye IT uzmanı</strong> olarak sektöre adım atacaksınız. Sadece eğitim değil, <strong>gerçek iş deneyimi</strong> kazanacaksınız.</p>
+        </section>
+        
+        <!-- Programs -->
+        <section class="programs">
+            <!-- Yazılım Geliştirme -->
+            <div class="program-card">
+                <h3>📱 YAZILIM GELİŞTİRME</h3>
+                
+                <div class="program-level">
+                    <h4>10. Sınıf (15 yaş): Web Developer</h4>
+                    <p>Frontend & Backend geliştirme<br>HTML, CSS, JavaScript, PHP, MySQL</p>
+                </div>
+                <div class="project-cert">
+                    <strong>Proje:</strong> Turizm rehberi web sitesi<br>
+                    <strong>Sertifika:</strong> Microsoft Azure Fundamentals
+                </div>
+                
+                <div class="program-level">
+                    <h4>11. Sınıf (16 yaş): Mobile App Developer</h4>
+                    <p>Android & iOS uygulama geliştirme<br>React Native, Flutter</p>
+                </div>
+                <div class="project-cert">
+                    <strong>Proje:</strong> AZ Turizm Çeviri App'i<br>
+                    <strong>Sertifika:</strong> Google Associate Android Developer
+                </div>
+            </div>
+            
+            <!-- Tasarım & Pazarlama -->
+            <div class="program-card">
+                <h3>🎨 TASARIM & PAZARLAMA</h3>
+                
+                <div class="program-level">
+                    <h4>10. Sınıf (15 yaş): UX/UI Designer</h4>
+                    <p>Kullanıcı deneyimi ve arayüz tasarımı<br>Figma, Adobe XD, Photoshop</p>
+                </div>
+                <div class="project-cert">
+                    <strong>Proje:</strong> Food Delivery app tasarımı<br>
+                    <strong>Sertifika:</strong> Adobe Certified Expert
+                </div>
+                
+                <div class="program-level">
+                    <h4>11. Sınıf (16 yaş): Digital Marketing</h4>
+                    <p>Sosyal medya pazarlama<br>SEO, Google Ads, İçerik üretimi</p>
+                </div>
+                <div class="project-cert">
+                    <strong>Proje:</strong> Startup için tam pazarlama kampanyası<br>
+                    <strong>Sertifika:</strong> Google Ads Certification
+                </div>
+            </div>
+            
+            <!-- Oyun & XR -->
+            <div class="program-card">
+                <h3>🎮 OYUN & XR GELİŞTİRME</h3>
+                
+                <div class="program-level">
+                    <h4>10. Sınıf (15 yaş): 2D/3D Game Developer</h4>
+                    <p>Unity ile oyun geliştirme<br>C# programlama, 3D modelleme</p>
+                </div>
+                <div class="project-cert">
+                    <strong>Proje:</strong> Bakü puzzle oyunu<br>
+                    <strong>Sertifika:</strong> Unity Certified Programmer
+                </div>
+                
+                <div class="program-level">
+                    <h4>11. Sınıf (16 yaş): AR/XR Developer</h4>
+                    <p>Artırılmış ve Sanal Gerçeklik<br>ARCore, ARKit, WebXR</p>
+                </div>
+                <div class="project-cert">
+                    <strong>Proje:</strong> AZ Tarihi AR uygulaması<br>
+                    <strong>Sertifika:</strong> Unity XR Developer
+                </div>
+            </div>
+            
+            <!-- Veri & AI -->
+            <div class="program-card">
+                <h3>📊 VERİ & YAPAY ZEKA</h3>
+                
+                <div class="program-level">
+                    <h4>10. Sınıf (15 yaş): Data Analyst</h4>
+                    <p>Veri analizi ve görselleştirme<br>Python, Excel, SQL, Tableau</p>
+                </div>
+                <div class="project-cert">
+                    <strong>Proje:</strong> Petrol fiyatları analizi<br>
+                    <strong>Sertifika:</strong> Google Data Analytics Professional
+                </div>
+                
+                <div class="program-level">
+                    <h4>11. Sınıf (16 yaş): Business Intelligence Analyst</h4>
+                    <p>İş zekası ve karar destek sistemleri<br>Power BI, Advanced Analytics</p>
+                </div>
+                <div class="project-cert">
+                    <strong>Proje:</strong> AZ E-ticaret BI Dashboard'u<br>
+                    <strong>Sertifika:</strong> Microsoft Power BI Data Analyst
+                </div>
+            </div>
+            
+            <!-- Siber Güvenlik -->
+            <div class="program-card">
+                <h3>🛡️ SİBER GÜVENLİK</h3>
+                
+                <div class="program-level">
+                    <h4>10. Sınıf (15 yaş): Security Analyst</h4>
+                    <p>Ağ güvenliği ve tehdit analizi<br>Cybersecurity fundamentals</p>
+                </div>
+                <div class="project-cert">
+                    <strong>Proje:</strong> Okulun Security Test'i<br>
+                    <strong>Sertifika:</strong> CompTIA Security+
+                </div>
+                
+                <div class="program-level">
+                    <h4>11. Sınıf (16 yaş): Certified Ethical Hacker (CEH)</h4>
+                    <p>Penetration testing<br>Ethical hacking, Vulnerability assessment</p>
+                </div>
+                <div class="project-cert">
+                    <strong>Proje:</strong> Banka phishing simülasyonu<br>
+                    <strong>Sertifika:</strong> CEH v12
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features -->
+        <section class="features">
+            <h2>🏆 PROGRAM ÖZELLİKLERİ</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>✅ GERÇEK İŞ DENEYİMİ</h3>
+                    <p>Her proje gerçek şirketlerle yapılır<br>Sektör mentörlüğü<br>Portfolio oluşturma</p>
+                </div>
+                <div class="feature">
+                    <h3>✅ ULUSLARARASI SERTİFİKALAR</h3>
+                    <p>Google, Microsoft, Adobe, Unity<br>Dünya çapında geçerli<br>CV'de büyük avantaj</p>
+                </div>
+                <div class="feature">
+                    <h3>✅ İŞ GARANTİSİ</h3>
+                    <p>Mezun öğrencilerin %90'ı iş buluyor<br>Junior seviye pozisyonlar<br>Freelance iş fırsatları</p>
+                </div>
+                <div class="feature">
+                    <h3>✅ AZERBAIJAN ÖZEL İÇERİK</h3>
+                    <p>Yerel pazar ihtiyaçları<br>Azerbaycan şirketleriyle işbirliği<br>Turizm, finans, e-ticaret odaklı</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Career -->
+        <section class="career">
+            <h2>🎓 MEZUN OLDUKTAN SONRA</h2>
+            <div class="career-paths">
+                <div class="career-path">
+                    <h3>Şirkette Çalışma</h3>
+                    <p>Junior developer, analyst, designer</p>
+                </div>
+                <div class="career-path">
+                    <h3>Freelancing</h3>
+                    <p>Kendi müşterilerini bulma</p>
+                </div>
+                <div class="career-path">
+                    <h3>Startup Kurma</h3>
+                    <p>Kendi teknoloji şirketini kurma</p>
+                </div>
+                <div class="career-path">
+                    <h3>İleri Eğitim</h3>
+                    <p>Üniversitede IT bölümü okuma</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why -->
+        <section class="why">
+            <h2>💡 NEDEN BU PROGRAM?</h2>
+            <div class="why-list">
+                <div class="why-item">
+                    <span>🌟</span>
+                    <div>
+                        <h3>Erken başlama</h3>
+                        <p>15-16 yaşında IT kariyerine başla</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <span>💼</span>
+                    <div>
+                        <h3>Pratik odak</h3>
+                        <p>Teoriden çok uygulama</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <span>🤝</span>
+                    <div>
+                        <h3>Gerçek projeler</h3>
+                        <p>Şirketlerle çalışma fırsatı</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <span>🌍</span>
+                    <div>
+                        <h3>Uluslararası fırsat</h3>
+                        <p>Dünya çapında geçerli sertifikalar</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <span>💰</span>
+                    <div>
+                        <h3>Yüksek maaş</h3>
+                        <p>Yaşıtlarından 3-4 kat fazla kazanç</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <span>🚀</span>
+                    <div>
+                        <h3>Hızlı kariyer</h3>
+                        <p>2 yılda profesyonel seviye</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA -->
+        <section class="cta">
+            <h2>🎯 HAYALINIZ GERÇEĞİ OLSUN!</h2>
+            <p><em>16 yaşında teknoloji sektörünün lideri olmaya hazır mısınız?</em></p>
+            <div class="cta-motto">"Geleceği kodla, dünyayı tasarla, güvenliği sağla!"</div>
+        </section>
+        
+        <!-- Footer -->
+        <section class="footer">
+            <p><em>Bu program Azerbaycan Eğitim Bakanlığı onaylı ve uluslararası standartlarda hazırlanmıştır.</em></p>
+        </section>
+    </div>
+</body>
+</html>
